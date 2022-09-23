@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Poppins&display=swap');
+@import 'mixin';
+@import 'variable';
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+body {
+    font-family: $primary-font;
+    background-color: $secondary;
+}
+a{
+    text-decoration: none;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+
+  input:hover,
+input:focus,
+textarea:focus,
+textarea:hover,
+button {
+    outline: none !important;
+    box-shadow: none !important; 
+}
+
+//====navbar start===========
+
+.header{
+    text-transform: capitalize;
+    .navbar{
+        padding: 15px 0;
+        transition: all .4s linear;
+    }
+    .navbar-brand {
+        img{
+            max-width: 120px;
+            height: auto;
+        }
+    }
+    .navbar-toggler{
+        border: 0;
+        color: $gray-color;
+        line-height: 2;
+    }
+}
