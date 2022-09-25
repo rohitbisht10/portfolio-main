@@ -2,6 +2,7 @@
 @import 'mixin';
 @import 'variable';
 
+
 *{
     padding: 0;
     margin: 0;
@@ -40,6 +41,8 @@ button {
     box-shadow: none !important; 
 }
 
+
+
 //====navbar start===========
 
 .header{
@@ -58,5 +61,243 @@ button {
         border: 0;
         color: $gray-color;
         line-height: 2;
+    :focus {
+        box-shadow: none;
+    }
+    }
+    .nav-item {
+        margin: 0px 20px ;
+
+      .nav-link{
+        font-size: 20px;
+        font-weight: 600;
+        position: relative;
+        color: $text-gray;
+        display: inline-block;
+      
+        ::after{
+            position: absolute;
+            content: "";
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background: $primary;
+            transition: 0.3s;
+            bottom: 0;
+        
+        }
+         :hover::after{
+            width: 100%;
+        }  
     }
 }
+    }
+     .main-btn{
+        @include btn;
+     }
+    .main-btn:hover{
+        @include hover;
+      }
+    
+      //========banner start =========
+
+      .banner{
+        width: 100%;
+        height: auto;
+        min-height: 700px;
+        background-image: url('/img/bg-image.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        background-attachment: fixed;
+        padding: 200px 0 100px 0;
+     
+     h1{
+        @include h1;
+       span{
+        color: $primary
+       }
+    }
+    h6{
+        @include h6;
+    }
+    .main-btn{
+        @include btn;
+     }
+    .main-btn:hover{
+        @include hover;
+      }
+    }
+
+    //========== about start =======//
+
+
+    .about__start{
+        width: 100%;
+        height: auto;
+        min-height: 700px;
+    .subtitle{
+            @include subtitle;
+        }
+        h2{
+            @include h2;
+        }
+        p{
+            @include p;
+        }
+        
+      ul.nav-pills{
+            border: 1px solid $gray-color;
+            border-radius: 50px;
+    }
+    li{
+     .nav-link{
+        font-size: 20px;
+        font-weight: 400;
+        border-radius: 50px;
+        transition: all 0.4s cubic-bezier(0,0,0.7,1);
+        border: 0;
+        color: $gray-color;
+        display: inline-block;
+     }
+      .nav-link.active{
+            background-color: $primary;
+        }
+    }
+    }
+    .single-progress{
+        margin-top: 25px;
+        position: relative;
+        overflow: hidden;
+    
+   .progress{
+    height: 4px;
+    border-radius: 4px;
+    box-shadow: none;
+    background-color: $white;
+    overflow: visible;
+   }
+   .progress-bar{
+    background: $gradient-color;
+   }
+   h6{
+    @include h6;
+    text-align: left;
+   }
+   .label{
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 15px;
+    color: $text-gray;
+   }
+    }
+
+    .tab-pane li{
+        font-size: 15px;
+        margin-bottom: 20px;
+        color: $gray-color;
+        font-weight: 300;
+        list-style: none;
+
+     a{
+        font-size: 20px;
+        display: block;
+        color: $text-gray;
+     }
+
+    }
+
+    
+
+
+
+
+
+
+
+    //=============responsive============
+
+    @media (max-width:991px) {
+
+        /* custom css */
+        section {
+            padding: 30px 0;
+        }
+    
+        h2 {
+            font-size: 30px;
+            line-height: 40px;
+        }
+    
+        h3 {
+            font-size: 20px;
+        }
+    
+        /* 2 Navbar */
+        .header-scrolled {
+            height: auto;
+        }
+    
+        .header .menu__navbar {
+            text-align: center;
+            background-color: $dark;
+            padding-bottom: 15px;
+        }
+    
+        .header .nav-item .nav-link {
+            margin-top: 15px;
+        }
+    
+        /* banner wrapper */
+        .banner {
+            padding: 200px 0;
+        }
+    
+        /* About */
+        .about__start ul.nav-pills{
+            width:61%;
+            margin:auto;
+    
+        }
+    
+        /* portfolio */
+        .portfolio .card {
+            min-height: 400px;
+        }
+    
+    }
+    
+    @media (max-width: 767px) {
+    
+        h1 {
+            font-size: 30px;
+            line-height: 48px;
+        }
+    
+        h2 {
+            font-size: 25px;
+        }
+    
+        p {
+            font-size: 13px;
+            line-height: 24px;
+        }
+
+        .about__start ul.nav-pills{
+            width:100%;
+            margin:auto;
+            border:0;
+        }
+        .about__start ul li .nav-link {
+            font-size: 13px;
+        } 
+        
+    
+        .portfolio .card {
+            min-height: 500px;
+        }
+    } 
+    
+
+        
