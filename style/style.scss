@@ -3,301 +3,499 @@
 @import 'variable';
 
 
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     overflow-x: hidden;
 }
+
 body {
     font-family: $primary-font;
     background-color: $secondary;
 }
-a{
+
+a {
     text-decoration: none;
 }
 
 ::-webkit-scrollbar {
     width: 10px;
-  }
-  
-  ::-webkit-scrollbar-track {
-    background: #f1f1f1; 
-  }
-   
-  ::-webkit-scrollbar-thumb {
-    background: #888; 
-  }
-  ::-webkit-scrollbar-thumb:hover {
-    background: #555; 
-  }
+}
 
-  input:hover,
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+input:hover,
 input:focus,
 textarea:focus,
 textarea:hover,
 button {
     outline: none !important;
-    box-shadow: none !important; 
+    box-shadow: none !important;
 }
 
 
 
 //====navbar start===========
 
-.header{
+.header {
     text-transform: capitalize;
-    .navbar{
+
+    .navbar {
         padding: 15px 0;
         transition: all .4s linear;
     }
+
     .navbar-brand {
-        img{
+        img {
             max-width: 120px;
             height: auto;
         }
     }
-    .navbar-toggler{
+
+    .navbar-toggler {
         border: 0;
         color: $gray-color;
         line-height: 2;
-    :focus {
-        box-shadow: none;
-    }
-    }
-    .nav-item {
-        margin: 0px 20px ;
 
-      .nav-link{
-        font-size: 20px;
-        font-weight: 600;
-        position: relative;
-        color: $text-gray;
-        display: inline-block;
-      
-        ::after{
-            position: absolute;
-            content: "";
-            left: 0;
-            width: 0%;
-            height: 2px;
-            background: $primary;
-            transition: 0.3s;
-            bottom: 0;
-        
+        :focus {
+            box-shadow: none;
         }
-         :hover::after{
-            width: 100%;
-        }  
     }
-}
-    }
-     .main-btn{
-        @include btn;
-     }
-    .main-btn:hover{
-        @include hover;
-      }
-    
-      //========banner start =========
 
-      .banner{
-        width: 100%;
-        height: auto;
-        min-height: 700px;
-        background-image: url('/img/bg-image.jpg');
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center center;
-        background-attachment: fixed;
-        padding: 200px 0 100px 0;
-     
-     h1{
-        @include h1;
-       span{
-        color: $primary
-       }
+    .nav-item {
+        margin: 0px 20px;
+
+        .nav-link {
+            font-size: 20px;
+            font-weight: 600;
+            position: relative;
+            color: $text-gray;
+            display: inline-block;
+        }
+           .nav-link ::after {
+                position: absolute;
+                content: "";
+                left: 0;
+                width: 0%;
+                height: 2px;
+                background: $primary;
+                transition: 0.3s;
+                bottom: 0;
+
+            }
+
+            :hover::after {
+                width: 100%;
+            }
+        }
     }
-    h6{
+
+.main-btn {
+    @include btn;
+}
+
+.main-btn:hover {
+    @include hover;
+}
+
+//========banner start =========
+
+.banner {
+    width: 100%;
+    height: auto;
+    min-height: 700px;
+    background-image: url('/img/bg-image.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    padding: 200px 0 100px 0;
+
+    h1 {
+        @include h1;
+
+        span {
+            color: $primary
+        }
+    }
+
+    h6 {
         @include h6;
     }
-    .main-btn{
+
+    .main-btn {
         @include btn;
-     }
-    .main-btn:hover{
+    }
+
+    .main-btn:hover {
         @include hover;
-      }
+    }
+}
+
+//========== about start =======//
+
+
+.about__start {
+    width: 100%;
+    height: auto;
+    min-height: 700px;
+    padding-top: 10px;
+
+    .subtitle {
+        @include subtitle;
     }
 
-    //========== about start =======//
-
-
-    .about__start{
-        width: 100%;
-        height: auto;
-        min-height: 700px;
-    .subtitle{
-            @include subtitle;
-        }
-        h2{
-            @include h2;
-        }
-        p{
-            @include p;
-        }
-        
-      ul.nav-pills{
-            border: 1px solid $gray-color;
-            border-radius: 50px;
+    h2 {
+        @include h2;
     }
-    li{
-     .nav-link{
-        font-size: 20px;
-        font-weight: 400;
+
+    p {
+        @include p;
+    }
+
+    ul.nav-pills {
+        border: 1px solid $gray-color;
         border-radius: 50px;
-        transition: all 0.4s cubic-bezier(0,0,0.7,1);
-        border: 0;
-        color: $gray-color;
-        display: inline-block;
-     }
-      .nav-link.active{
+    }
+
+    li {
+        .nav-link {
+            font-size: 20px;
+            font-weight: 400;
+            border-radius: 50px;
+            transition: all 0.4s cubic-bezier(0, 0, 0.7, 1);
+            border: 0;
+            color: $gray-color;
+            display: inline-block;
+        }
+
+        .nav-link.active {
             background-color: $primary;
         }
     }
-    }
-    .single-progress{
-        margin-top: 25px;
-        position: relative;
-        overflow: hidden;
-    
-   .progress{
-    height: 4px;
-    border-radius: 4px;
-    box-shadow: none;
-    background-color: $white;
-    overflow: visible;
-   }
-   .progress-bar{
-    background: $gradient-color;
-   }
-   h6{
-    @include h6;
-    text-align: left;
-   }
-   .label{
-    position: absolute;
-    right: 0;
-    top: 0;
-    font-size: 15px;
-    color: $text-gray;
-   }
+}
+
+.single-progress {
+    margin-top: 25px;
+    position: relative;
+    overflow: hidden;
+
+    .progress {
+        height: 4px;
+        border-radius: 4px;
+        box-shadow: none;
+        background-color: $white;
+        overflow: visible;
     }
 
-    .tab-pane li{
+    .progress-bar {
+        background: $gradient-color;
+    }
+
+    h6 {
+        @include h6;
+        text-align: left;
+    }
+
+    .label {
+        position: absolute;
+        right: 0;
+        top: 0;
         font-size: 15px;
-        margin-bottom: 20px;
-        color: $gray-color;
-        font-weight: 300;
-        list-style: none;
+        color: $text-gray;
+    }
+}
 
-     a{
+.tab-pane li {
+    font-size: 15px;
+    margin-bottom: 20px;
+    color: $gray-color;
+    font-weight: 300;
+    list-style: none;
+
+    a {
         font-size: 20px;
         display: block;
         color: $text-gray;
-     }
+    }
+
+}
+
+//============about end =============
+
+//===========services start =========
+
+
+.services__start {
+    height: auto;
+
+    .subtitle {
+        @include subtitle;
+    }
+
+    h2 {
+        @include h2;
+    }
+
+    h3 {
+        @include h3;
+    }
+
+    p {
+        @include p;
+    }
+
+    .card {
+        background-color: $dark;
+        cursor: pointer;
+        transition: transform 0.65s cubic-bezier(0.05, 0.2, 0.1, 1);
+        box-shadow: 0.65s, cubic-bezier(0.05, 0.2, 0.2, 1);
+    }
+
+    .card :hover {
+        box-shadow: 0px 2px 70px 0px rgb(253 71 102 / 5%);
+        transform: translateY(-5px);
+    }
+}
+
+
+//===========services end =======
+
+//========portfolio start =======
+
+.portfolio__start {
+    padding-top: 50px;
+
+    .subtitle {
+        @include subtitle;
+    }
+
+    h2 {
+        @include h2;
+    }
+
+    p {
+        @include p;
+    }
+
+    .card {
+        height: 100%;
+        min-height: 400px;
+        overflow: hidden;
+        border: 1px solid $white;
+        cursor: pointer;
+        box-shadow: 0 0 16px 4px $dark;
+
+        span {
+            transition: background-position 4s ease-in-out 0s;
+            height: 100%;
+            width: 100%;
+            background-size: cover;
+            background-position: top center;
+        }
+    }
+
+    .card:hover span {
+        background-position: bottom center;
+    }
+}
+
+//========end =============
+
+//=========contact start ===========
+
+.contact__start {
+    padding-top: 50px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 40px;
+    // min-height: 600px;
+
+    .subtitle {
+        @include subtitle;
+    }
+
+    h2 {
+        @include h2;
+    }
+
+    .form-control,
+    textarea {
+        background-color: transparent;
+        border-color: $gray-color;
+        color: $text-gray;
+        font-size: 15px;
+        font-weight: 400;
+        padding: 10px 20px;
+    }
+
+    .form-control:hover,
+    textarea:hover,
+    .form-control:focus,
+    textarea:focus {
+        border-color: $primary;
+        color: $text-white;
+    }
+    .call__details{
+        color: $text-gray;
+    }
+    a{
+        font-size: 600;
+        color: $text-white;
+    }
+}
+//===========footer end section =========
+
+.footer__start{
+    padding: 20px 0;
+    background-color: $dark;
+
+    p{
+        @include p;
+    }
+    .footer__logo {
+        img{
+            width: 100px;
+        }
+    }
+    .social-icon {
+
+     li{
+        margin: 8px;
+    }
+    a{
+    width: 35px;
+    height: 35px;
+    line-height: 30px;
+    font-size: 20px;
+    display: inline-block;
+    border: 2px solid $text-gray;
+    color: $text-gray;
+    text-align: center;
+    border-radius: 100%;
+    -webkit-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+ a:hover {
+    background-color: $primary;
+    border-color: $primary;
+    color: $white;
+    box-shadow: 0 10px 15px 0 rgb(0 0 0 / 10%);
+    transform: translateY(-3px);
+}
+    }
+ .copyright-text {
+    p{
+    font-size:12px;
+    line-height: 20px;
+}
+ a {
+    color: $primary;
+}
+
+}
+}
+
+
+
+
+
+
+
+
+
+//=============responsive============
+
+@media (max-width:991px) {
+
+    /* custom css */
+    section {
+        padding: 30px 0;
+    }
+
+    h2 {
+        font-size: 30px;
+        line-height: 40px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    /* 2 Navbar */
+    .header-scrolled {
+        height: auto;
+    }
+
+    .header .menu__navbar {
+        text-align: center;
+        background-color: $dark;
+        padding-bottom: 15px;
+    }
+
+    .header .nav-item .nav-link {
+        margin-top: 15px;
+    }
+
+    /* banner wrapper */
+    .banner {
+        padding: 200px 0;
+    }
+
+    /* About */
+    .about__start ul.nav-pills {
+        width: 61%;
+        margin: auto;
 
     }
 
-    
-
-
-
-
-
-
-
-    //=============responsive============
-
-    @media (max-width:991px) {
-
-        /* custom css */
-        section {
-            padding: 30px 0;
-        }
-    
-        h2 {
-            font-size: 30px;
-            line-height: 40px;
-        }
-    
-        h3 {
-            font-size: 20px;
-        }
-    
-        /* 2 Navbar */
-        .header-scrolled {
-            height: auto;
-        }
-    
-        .header .menu__navbar {
-            text-align: center;
-            background-color: $dark;
-            padding-bottom: 15px;
-        }
-    
-        .header .nav-item .nav-link {
-            margin-top: 15px;
-        }
-    
-        /* banner wrapper */
-        .banner {
-            padding: 200px 0;
-        }
-    
-        /* About */
-        .about__start ul.nav-pills{
-            width:61%;
-            margin:auto;
-    
-        }
-    
-        /* portfolio */
-        .portfolio .card {
-            min-height: 400px;
-        }
-    
+    /* portfolio */
+    .portfolio__start .card {
+        min-height: 400px;
     }
-    
-    @media (max-width: 767px) {
-    
-        h1 {
-            font-size: 30px;
-            line-height: 48px;
-        }
-    
-        h2 {
-            font-size: 25px;
-        }
-    
-        p {
-            font-size: 13px;
-            line-height: 24px;
-        }
 
-        .about__start ul.nav-pills{
-            width:100%;
-            margin:auto;
-            border:0;
-        }
-        .about__start ul li .nav-link {
-            font-size: 13px;
-        } 
-        
-    
-        .portfolio .card {
-            min-height: 500px;
-        }
-    } 
-    
+}
 
-        
+@media (max-width: 767px) {
+
+    h1 {
+        font-size: 30px;
+        line-height: 48px;
+    }
+
+    h2 {
+        font-size: 25px;
+    }
+
+    p {
+        font-size: 13px;
+        line-height: 24px;
+    }
+
+    .about__start ul.nav-pills {
+        width: 100%;
+        margin: auto;
+        border: 0;
+    }
+
+    .about__start ul li .nav-link {
+        font-size: 13px;
+    }
+
+
+    .portfolio__start .card {
+        min-height: 500px;
+    }
+}
